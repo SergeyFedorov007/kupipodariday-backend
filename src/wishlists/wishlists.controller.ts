@@ -18,6 +18,7 @@ import { RequestUser } from 'src/types/types';
 @Controller('wishlistlists')
 export class WishlistsController {
   constructor(private wishlistsService: WishlistsService) {}
+  @UseGuards(JwtGuard)
   @Get()
   getWishlists() {
     return this.wishlistsService.getWishlists();
